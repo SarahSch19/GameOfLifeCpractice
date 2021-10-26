@@ -43,6 +43,7 @@ void gameOfLife (void) {
     Cell** grid = initGrid();
 
     //vérif grid == NULL
+    printGrid(grid) ;
 
     int option = 1 ;
     while (option) {
@@ -55,12 +56,13 @@ void gameOfLife (void) {
                 freeGrid(grid) ;
                 return ;
             case 1:
-                printGrid(grid) ;
                 nextRound(grid) ;
+                printGrid(grid) ;
                 printf("\n\n") ;
                 printf("Next round\n") ;
                 break ;
             case 2:
+                saveState(grid);
                 printf("Write to file\n") ;
                 break ;
         }
